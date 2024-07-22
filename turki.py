@@ -14,7 +14,7 @@ if user:
     openai.api_key = st.secrets["api"]
     st.session_state.message.append({"role": "user", "content": user})
     st.chat_message("user").write(user)
-    response = openai.ChatCompletion.creat(model="gpt-4o-mimi", messages=st.session_state.messages)
+    response = openai.ChatCompletion.creat(model="gpt-4o-mini", messages=st.session_state.messages)
     ai = response.choices[0].message
     st.session_state.messages.append(ai)
     st.chat_messag("assistant").write(ai.content)
